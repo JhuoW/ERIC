@@ -1,0 +1,49 @@
+
+dataset: "AIDS700nef"
+
+model_name: "GSC_GNN"
+
+GSC_GNN:
+  epochs: 30000
+  use_val: True
+  val_ratio: 0.25
+  iter_val_start: 29000
+  iter_val_every: 20
+  save_best: True
+  multilabel: False
+  patience: -1
+  seed: -1
+  lr: 0.001
+  weight_decay: 0.0
+  lr_scheduler: False
+  monitor: 'mse'
+  recache: False
+  optimizer: 'Adam'
+  num_layers: 2
+  activation: 'relu'
+  multirun: 1
+  feat_norm: False
+  synth: False
+  gnn_encoder: 'GIN'
+  multi_contrast: False
+  gnn_filters: [64, 64, 32, 16]
+  dropout: 0.0
+  deepsets: True
+  use_bn: False
+  deepsets_inner_act: 'relu'
+  deepsets_outer_act: 'relu'
+  fuse_type: 'cat'
+  pooling: 'add'
+  reduction: 2
+  inner_mlp: True
+  inner_mlp_layers: 1
+  outer_mlp_layers: 1
+  use_mlp_score: True
+  mlp_score_layer: 2
+  batch_size: 128
+  val_batch_size: 512
+  use_sim: True
+  NTN_layers: 1
+  tensor_neurons: 16
+  output_comb: True
+
